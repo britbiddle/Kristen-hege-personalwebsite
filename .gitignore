@@ -1,0 +1,9 @@
+.DS_Store
+~$*
+*.docx
+# Original images in root — copies already in images/ folder
+/images.jpg
+/Kristen-Hege-2.jpg
+/kristen-hege-hero-1-920x620.jpg
+/Kristen-Hege-v2.jpg
+/women_go_wild_frame.webp
