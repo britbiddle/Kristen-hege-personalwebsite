@@ -637,6 +637,25 @@ a.pill:not(.pill-accent):hover {
   color: rgba(255,255,255,0.3);
   letter-spacing: 0.06em;
 }
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 24px;
+}
+.footer-credit {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-highlight);
+  margin-top: 6px;
+}
+.footer-credit a {
+  color: var(--color-highlight);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+.footer-credit a:hover { color: white; }
 
 /* ============================================
    RESPONSIVE
