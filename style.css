@@ -121,6 +121,15 @@ ul { list-style: none; }
   background: var(--color-highlight);
   border-color: var(--color-highlight);
 }
+.btn-secondary {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+}
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: white;
+}
 .btn-sm { padding: 10px 24px; font-size: 0.76rem; }
 
 /* ============================================
@@ -425,6 +434,7 @@ a.pill:not(.pill-accent):hover {
   margin-bottom: 20px;
 }
 .card-link {
+  display: block;
   font-size: 0.77rem;
   font-weight: 600;
   color: var(--color-accent);
@@ -433,15 +443,23 @@ a.pill:not(.pill-accent):hover {
   transition: color 0.2s;
 }
 .card:hover .card-link { color: var(--color-accent-dark); }
+.card-link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+.card-link-group .card-link { margin-top: 0; }
+.card-link-group .card-link:hover { color: var(--color-accent-dark); }
 
 /* ============================================
    PROJECTS
    ============================================ */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  max-width: 860px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 .project-card {
@@ -468,22 +486,6 @@ a.pill:not(.pill-accent):hover {
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-.project-card-image-espn {
-  background: linear-gradient(135deg, #0f1a24 0%, #1e3044 50%, #2c4a6a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.espn-watermark {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: rgba(255,255,255,0.15);
-  letter-spacing: 0.08em;
-  user-select: none;
-}
-.project-card-image-fundraiser {
-  background: linear-gradient(135deg, #2c3e50 0%, #4a7fa5 80%, #6b9fc2 100%);
 }
 .project-card-overlay {
   position: absolute;
@@ -515,27 +517,37 @@ a.pill:not(.pill-accent):hover {
 }
 .project-card-body .card-text { margin-bottom: 24px; }
 .project-card-body .btn { align-self: flex-start; margin-top: auto; }
+.project-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+.project-card-links .btn { margin-top: 0; }
 
 /* ============================================
    SPEAKING
    ============================================ */
-.speaking-layout {
+.speaking-intro-full {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 72px;
   align-items: start;
+  margin-bottom: 72px;
 }
 .speaking-text {
   font-size: 1.02rem;
   line-height: 1.82;
   color: var(--color-text-light);
+  margin-bottom: 20px;
 }
+.speaking-intro-text .btn { margin-top: 8px; }
 .speaking-photo {
   width: 100%;
   max-width: 320px;
   border-radius: var(--radius);
-  margin-top: 36px;
 }
+
 .speaking-venues-title {
   font-family: var(--font-body);
   font-size: 0.7rem;
@@ -543,25 +555,43 @@ a.pill:not(.pill-accent):hover {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-secondary);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
+  text-align: center;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-border);
 }
-.venues-list { display: flex; flex-direction: column; }
-.venue-item {
+.venue-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+}
+.venue-year-column + .venue-year-column {
+  border-left: 1px solid var(--color-border);
+  padding-left: 40px;
+}
+.venue-year-heading {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+.venue-list-compact {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--color-border);
+  gap: 6px;
 }
-.venue-name {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 3px;
+.venue-list-compact li {
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--color-text-light);
 }
-.venue-detail { font-size: 0.82rem; color: var(--color-secondary); }
-.venues-note { margin-top: 28px; font-size: 0.87rem; color: var(--color-text-light); }
+.venue-list-compact li em {
+  font-style: normal;
+  color: var(--color-secondary);
+  font-size: 0.78rem;
+}
+.venues-note { margin-top: 28px; font-size: 0.87rem; color: var(--color-text-light); text-align: center; }
 .venues-note a { color: var(--color-accent); font-weight: 500; }
 .venues-note a:hover { text-decoration: underline; }
 
@@ -628,13 +658,22 @@ a.pill:not(.pill-accent):hover {
     grid-template-columns: repeat(2, 1fr);
   }
   .projects-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
   }
-  .speaking-layout {
+  .speaking-intro-full {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
+  }
+  .speaking-photo { max-width: 280px; }
+  .venue-columns {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 32px;
+  }
+  .venue-year-column:nth-child(3) {
+    grid-column: 1 / -1;
+    border-left: none;
+    padding-left: 0;
   }
 }
 
@@ -644,6 +683,23 @@ a.pill:not(.pill-accent):hover {
   .nav-inner { padding: 18px 20px; }
 
   .nav-toggle { display: flex; }
+
+  .venue-columns {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+  .venue-year-column + .venue-year-column,
+  .venue-year-column:nth-child(3) {
+    border-left: none;
+    padding-left: 0;
+    grid-column: auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
 
   .nav-links {
     display: none;
