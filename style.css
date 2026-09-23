@@ -619,6 +619,13 @@ a.pill:not(.pill-accent):hover {
   color: var(--color-text-light);
   margin: -32px auto 48px;
 }
+.adventure-intro a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.adventure-intro a:hover { color: var(--color-accent-dark); }
 .hike-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
