@@ -506,21 +506,6 @@ a.pill:not(.pill-accent):hover {
   padding: 6px 14px;
   border-radius: 100px;
 }
-.project-card-banner {
-  height: 220px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-dark) 100%);
-}
-.project-card-banner-text {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 0.04em;
-}
 .project-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
 .project-card-title {
   font-family: var(--font-heading);
