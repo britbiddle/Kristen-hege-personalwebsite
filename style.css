@@ -541,7 +541,17 @@ a.pill:not(.pill-accent):hover {
   color: var(--color-text-light);
   margin-bottom: 20px;
 }
-.speaking-intro-text .btn { margin-top: 8px; }
+.speaking-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+.speaking-video-note {
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  margin-top: 12px;
+}
 .speaking-photo {
   width: 100%;
   max-width: 320px;
