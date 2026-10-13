@@ -855,8 +855,9 @@ a.pill:not(.pill-accent):hover {
   .section-title { margin-bottom: 36px; }
 
   .adventure-intro { margin: -16px auto 32px; }
-  .hike-stats { gap: 10px; margin-bottom: 32px; }
-  .hike-stat { padding: 18px 8px; }
+  .hike-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-bottom: 32px; }
+  .hike-stat { padding: 18px 6px; }
+  .hike-stat-value { font-size: 1.15rem; }
   .hike-stat-label { font-size: 0.6rem; letter-spacing: 0.12em; }
   .hike-table { font-size: 0.8rem; }
   .hike-table th,
@@ -866,4 +867,5 @@ a.pill:not(.pill-accent):hover {
   .hike-table th:last-child,
   .hike-table td:last-child { padding-right: 14px; }
   .hike-table thead th { font-size: 0.58rem; letter-spacing: 0.1em; }
+  .hike-table thead th.num { white-space: normal; }
 }
